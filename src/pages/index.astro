@@ -1,6 +1,7 @@
 ---
 import Main from "@/layouts/Main.astro";
 import Link from "@/components/Link.astro";
+import consts from "@/lib/const"
 ---
 
 <Main title="datashard">
@@ -16,7 +17,7 @@ import Link from "@/components/Link.astro";
     <h2 class="font-bold">{"->"} currently</h2>
     <ol>
       <li>
-        apprentice @ <Link text="proalpha" href="https://proalpha.com" />
+        apprentice @ <Link text={consts.employer.name} href={consts.employer.link}/>
       </li>
       <li>frontend/ui @ <Link text="pyro" href="https://pyro.host" /></li>
       <li>
