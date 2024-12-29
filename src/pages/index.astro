@@ -1,0 +1,57 @@
+---
+import Main from "@/layouts/Main.astro";
+import Link from "@/components/Link.astro";
+---
+
+<Main title="datashard">
+  <div id="intro">
+    <p>
+      frontend developer, ui designer, writer. <br />
+      they/them. <br />
+    </p>
+    <Link text="about" href="/about" />
+  </div>
+  <hr />
+  <div id="current">
+    <h2 class="font-bold">{"->"} currently</h2>
+    <ol>
+      <li>
+        apprentice @ <Link text="proalpha" href="https://proalpha.com" />
+      </li>
+      <li>frontend/ui @ <Link text="pyro" href="https://pyro.host" /></li>
+      <li>
+        writing text @ <Link
+          text="eurofurence"
+          href="https://eurofurence.org"
+        />
+      </li>
+    </ol>
+  </div>
+  <hr />
+  <div id="work">
+    <h2 class="font-bold">{"->"} work</h2>
+    <ol>
+      <Link asLI text="sor.dog" href="https://sor.dog" />
+      <Link asLI text="alx.rip" href="https://alx.rip" />
+      <Link asLI text="heika.dog" href="https://heika.dog" />
+      <Link asLI text="habitat" href="https://shard.wtf/work/habitat" />
+      <Link asLI text="novecore" href="https://shard.wtf/work/novecore" />
+    </ol>
+  </div>
+  <hr />
+  <div id="web">
+    <h2 class="font-bold">{"->"} on the web</h2>
+    <ol>
+      <Link asLI text="bluesky" href="https://shard.wtf/bluesky" />
+      <Link asLI text="twitter" href="https://shard.wtf/twitter" />
+      <Link asLI text="fediverse" href="https://shard.wtf/masto" />
+      <Link asLI text="github" href="https://shard.wtf/github" />
+      <Link asLI text="dribbble" href="https://shard.wtf/dribbble" />
+    </ol>
+  </div>
+  <hr />
+  <div id="contact">
+    <h2 class="font-bold">{"->"} contact</h2>
+    <Link text="j [at] datakra.sh" href="mailto:j@datakra.sh" />
+  </div>
+</Main>

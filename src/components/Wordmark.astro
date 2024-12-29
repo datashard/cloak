@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets";
+import Dark from "@/assets/Wordmark-Dark.svg";
+import Light from "@/assets/Wordmark-Light.svg";
+
+---
+
+<!-- Kinda misleadingly named. Light shows on dark mode, Dark shows on light mode. -->
+ <Image src={Light} alt="datashard" class="hidden dark:flex" />
+ <Image src={Dark} alt="datashard" class="dark:hidden" />

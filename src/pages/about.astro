@@ -1,0 +1,44 @@
+---
+import Main from "@/layouts/Main.astro";
+import Link from "@/components/Link.astro";
+import Code from "@/components/Code.astro";
+import consts from "@/lib/const";
+---
+
+<Main title="about me | datashard">
+  <Link text="back" href="/" />
+  <hr />
+  <div>
+    <h1 class="font-bold text-2xl">about me</h1>
+    <p>
+      Hey! Name's <Code>datashard</Code>, though you can call me <Code>J</Code>.
+    </p>
+    <p>
+      I'm a software engineer and ui designer, i primarily work on the frontend,
+      but do have fullstack experience.
+    </p>
+    <p>
+      most of my work is within the React and Astro Ecosystems, including but
+      not limited to, working on a full-scale react web app for corporate
+      controlling as well as the managing, designing, and hosting of various
+      websites for creatives.
+    </p>
+    <p>
+      currently based in northern germany and working at <Link
+        text={consts.employer.name}
+        href={consts.employer.link}
+      /> as a <Code>Application Development Apprentice</Code>
+    </p>
+    <p>
+      as a freelancer, i've previously worked with a wide range of clients, from
+      artist collectives like <Link
+        text="THRIVE OR DIE"
+        href="https://thriveordie.life"
+      /> and <Link text="Arte et Labore" href="https://artelabore.online" />, to
+      solo artists like <Link text="sor ★彡" href="https://sor.dog" /> and <Link
+        text="Alex Heldt"
+        href="https://alx.rip"
+      />, as well as corporate clients such as <Link text="Novecore" href="https://novecore.com" />.
+    </p>
+  </div>
+</Main>

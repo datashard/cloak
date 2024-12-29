@@ -1,0 +1,56 @@
+---
+import "@/styles/globals.css";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { ThemeScript } from "astro-theme-toggle";
+import Wordmark from "@/components/Wordmark.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <ThemeScript />
+  </head>
+  <body class="dark:bg-black dark:text-white">
+    <ThemeToggle />
+    <main class="relative py-16 px-8 flex flex-col gap-4">
+      <div class="flex flex-col gap-4 max-w-[30rem] mx-auto">
+        <div class="relative flex flex-col gap-4 w-full mx-auto max-w-4xl">
+          <Wordmark />
+
+          <slot />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  import { handleToggleClick } from "astro-theme-toggle";
+  const addListener = () => {
+    document
+      .getElementById("theme-toggle")
+      ?.addEventListener("click", handleToggleClick);
+  };
+  addListener();
+  document.addEventListener("astro:after-swap", addListener);
+</script>
+
+<style is:global>
+  #light {
+    display: block;
+  }
+  #dark {
+    display: none;
+  }
+  .dark #light {
+    display: none;
+  }
+  .dark #dark {
+    display: block;
+  }
+</style>
