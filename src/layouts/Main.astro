@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { ThemeScript } from "astro-theme-toggle";
 import Wordmark from "@/components/Wordmark.astro";
-
 const { title } = Astro.props;
 ---
 
@@ -12,6 +11,11 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="frontend developer, ui designer, writer. " />
+    <meta property="og:image" content='/wordmarks/dark.png' />
+    <meta name="theme-color" content="#ffffff">
     <title>{title}</title>
     <ThemeScript />
   </head>

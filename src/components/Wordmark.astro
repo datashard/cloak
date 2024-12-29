@@ -6,5 +6,5 @@ import Light from "@/assets/Wordmark-Light.svg";
 ---
 
 <!-- Kinda misleadingly named. Light shows on dark mode, Dark shows on light mode. -->
- <Image src={Light} alt="datashard" class="hidden dark:flex" />
- <Image src={Dark} alt="datashard" class="dark:hidden" />
+ <Image loading="eager" src={Light} alt="datashard" class="hidden dark:flex" />
+ <Image loading="eager" src={Dark} alt="datashard" class="dark:hidden" />
