@@ -1,6 +1,6 @@
 export default {
     employer: {
         name: "proalpha",
-        link: "https://proalpha.com/",
+        link: "https://www.proalpha.com/",
     },
 };
