@@ -4,6 +4,13 @@ import type { Project } from "@/content/config";
 import Main from "@/layouts/Main.astro";
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
+
+const sorted = [
+  ...projects.filter(({ data: project }: { data: Project }) => project.featured),
+  ...projects.filter(({ data: project }: { data: Project }) => !project.featured),
+]
+
+console.log(sorted)
 ---
 
 <Main title="projects | datashard">
