@@ -9,8 +9,6 @@ const sorted = [
   ...projects.filter(({ data: project }: { data: Project }) => project.featured),
   ...projects.filter(({ data: project }: { data: Project }) => !project.featured),
 ]
-
-console.log(sorted)
 ---
 
 <Main title="projects | datashard">
@@ -22,7 +20,7 @@ console.log(sorted)
       </div>
       <div class="grid grid-cols-1 gap-4 content-evenly">
         {
-          projects.map(({ data: project }: { data: Project }) => (
+          sorted.map(({ data: project }: { data: Project }) => (
             <ProjectCard project={project} />
           ))
         }
