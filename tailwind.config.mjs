@@ -1,7 +1,9 @@
+
+const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ['class'],
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,yml}'],
 	theme: {
     	extend: {
     		borderRadius: {
@@ -10,6 +12,8 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
+				green: colors.green,
+				
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {

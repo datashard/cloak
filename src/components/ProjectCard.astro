@@ -1,0 +1,41 @@
+---
+import type { Project } from "@/content/config";
+import Tag from "@/components/Tag.astro";
+import { Link } from "lucide-react";
+
+interface Props {
+  project: Project;
+}
+
+const {
+  project: { title, description, link, icon, customClass, tags },
+} = Astro.props;
+---
+
+<div class={`card ${customClass}`}>
+  <div class="p-4">
+    <div class="flex items-center">
+      {
+        icon && (
+          <img
+            class={`w-14 mr-4 card ${customClass} p-2 cover`}
+            src={icon}
+            alt={title}
+          />
+        )
+      }
+      <h2 class="font-bold text-xl">{title}</h2>
+    </div>
+    <p class="pt-2">{description}</p>
+  </div>
+  <div class={`${customClass} border-t p-4 flex justify-between`}>
+    <div class="tags flex flex-wrap">
+      <!-- {tags?.map((tag, index) => <Tag index={index} customClass={customClass}>{tag}</Tag>)} -->
+    </div>
+    <div class="link">
+      <a href={link} class="flex items-center">
+        <Link size="24" />
+      </a>
+    </div>
+  </div>
+</div>

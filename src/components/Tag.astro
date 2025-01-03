@@ -1,0 +1,7 @@
+---
+const { customClass, index } = Astro.props
+---
+
+<span class={`${customClass} ${index >= 4 && 'hidden'} card m-1 px-2  border rounded`}>
+    <slot />
+</span>

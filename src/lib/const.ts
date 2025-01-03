@@ -3,4 +3,5 @@ export default {
         name: "proalpha",
         link: "https://www.proalpha.com/",
     },
+    descriptiopn: "frontend developer, ui designer, writer."
 };

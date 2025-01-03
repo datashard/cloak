@@ -63,6 +63,18 @@
     @apply border-border;
     font-family: 'Inter', sans-serif;
   }
+
+  .card {
+    @apply border rounded bg-neutral-500/10 hover:bg-neutral-500/15;
+  }
+
+  .rinth {
+    @apply bg-green-500/20 border-green-500/30  hover:bg-green-500/25;
+  }
+  .pyro {
+    @apply bg-amber-500/20 border-amber-500/30 hover:bg-amber-500/25;
+  }
+
   hr {
     margin: .01rem 0;
     border: 1.25px solid #363636;
@@ -71,6 +83,19 @@
     @apply bg-background text-foreground;
   }
   p {
-    @apply text-base mt-4;
+    @apply text-base mt-2;
   }
+}
+
+#light {
+  display: block;
+}
+#dark {
+  display: none;
+}
+.dark #light {
+  display: none;
+}
+.dark #dark {
+  display: block;
 }
