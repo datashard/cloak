@@ -9,6 +9,7 @@ const projectSchema = z.object({
   customClass: z.string().optional(),
   tags: z.array(z.string()).optional(),
   featured: z.boolean().optional(),
+  previous: z.boolean().optional().default(false)
 });
 
 const projects = defineCollection({

@@ -75,6 +75,33 @@
     @apply bg-amber-500/20 border-amber-500/30 hover:bg-amber-500/25;
   }
 
+  .featured {
+    --shine-deg: 45deg;
+    overflow: hidden;
+    /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
+    
+    background-repeat: no-repeat;
+    background-position: -100% 0, 0 0;
+  
+    background-image: linear-gradient(
+      var(--shine-deg),
+      transparent 20%,
+      transparent 40%,
+      rgb(68, 68, 68, 0.2) 50%,
+      rgb(68, 68, 68, 0.2) 55%,
+      transparent 70%,
+      transparent 100%
+    );
+  
+    background-size: 250% 250%, 100% 100%;
+    transition: background-position 0s ease;
+  }
+  
+  .featured:hover {
+    background-position: 200% 0, 0 0;
+    transition-duration: 1.5s;
+  }
+
   hr {
     margin: .01rem 0;
     border: 1.25px solid #363636;
@@ -83,7 +110,7 @@
     @apply bg-background text-foreground;
   }
   p {
-    @apply text-base mt-2;
+    @apply text-base;
   }
 }
 

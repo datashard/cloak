@@ -8,17 +8,17 @@ interface Props {
 }
 
 const {
-  project: { title, description, link, icon, customClass, tags },
+  project: { title, description, link, icon, customClass, tags, featured },
 } = Astro.props;
 ---
 
-<div class={`card ${customClass}`}>
+<div class={`card ${customClass} ${featured && 'featured'}`}>
   <div class="p-4">
     <div class="flex items-center">
       {
         icon && (
           <img
-            class={`w-14 mr-4 card ${customClass} p-2 cover`}
+            class={`w-14 mr-4 card ${customClass} ${featured && 'featured'} p-2 cover`}
             src={icon}
             alt={title}
           />
@@ -26,7 +26,7 @@ const {
       }
       <h2 class="font-bold text-xl">{title}</h2>
     </div>
-    <p class="pt-2">{description}</p>
+    <p set:html={description.replaceAll('\n', "<br>")} class="pt-2"></p>
   </div>
   <div class={`${customClass} border-t p-4 flex justify-between`}>
     <div class="tags flex flex-wrap">

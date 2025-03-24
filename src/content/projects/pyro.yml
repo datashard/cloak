@@ -1,5 +1,5 @@
 title: Pyro
-description: Next-generation game hosting platform built for scale and performance.
+description: Next-generation hosting platform built for scale and performance.
 link: https://pyro.host
 customClass: pyro
 icon: "/projects/pyro.svg"
@@ -10,6 +10,3 @@ tags:
   - TypeScript
   - Next.JS
   - Tailwind
-  - Docker
-  - UI
-  - UX
