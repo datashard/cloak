@@ -19,4 +19,17 @@ const projects = defineCollection({
 
 export type Project = z.infer<typeof projectSchema>;
 
-export const collections = { projects };
+const currentlySchema = z.object({
+  company: z.string(),
+  position: z.string(),
+  link: z.string().optional(),
+});
+
+const currently = defineCollection({
+  type: "data",
+  schema: currentlySchema,
+});
+
+export type Currently = z.infer<typeof currentlySchema>;
+
+export const collections = { projects, currently };

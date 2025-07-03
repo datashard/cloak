@@ -3,6 +3,9 @@ import Main from "@/layouts/Main.astro";
 import Link from "@/components/Link.astro";
 import Section from "@/components/Section.astro";
 import consts from "@/lib/const";
+
+import { getCollection } from "astro:content";
+const currently = await getCollection("currently");
 ---
 
 <Main title="datashard">
@@ -12,22 +15,23 @@ import consts from "@/lib/const";
       <br />
       they/them.
     </p>
-    <br>
+    <br />
     <Link text="about" href="/about" />
     •
     <Link text="projects" href="/projects" />
   </div>
-  <Section  title="currently">
-    <li>
-      apprentice @ <Link
-        text={consts.employer.name}
-        href={consts.employer.link}
-      />
-    </li>
-    <li>product lead @ <Link text="pyro" href="https://pyro.host" /></li>
-    <li>
-      writing text @ <Link text="eurofurence" href="https://eurofurence.org" />
-    </li>
+  <Section title="currently">
+    {
+      currently.map((item) => (
+        <li>
+          {item.data.company && (
+            <>
+              {item.data.position} @ <Link text={item.data.company} />
+            </>
+          )}
+        </li>
+      ))
+    }
   </Section>
   <Section title="on the web">
     <Link asLI text="bluesky" href="https://shard.wtf/bluesky" />

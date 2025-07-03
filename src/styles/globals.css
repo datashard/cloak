@@ -126,3 +126,7 @@
 .dark #dark {
   display: block;
 }
+
+p {
+  @apply pt-2
+}
