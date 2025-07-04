@@ -26,7 +26,7 @@ const currently = await getCollection("currently");
         <li>
           {item.data.company && (
             <>
-              {item.data.position} @ <Link text={item.data.company} />
+              {item.data.position} @ <Link text={item.data.company} href={item.data.link} />
             </>
           )}
         </li>
