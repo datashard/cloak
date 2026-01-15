@@ -2,6 +2,6 @@
 const { customClass, index } = Astro.props
 ---
 
-<span class={`${customClass} ${index >= 4 && 'hidden'} card m-1 px-2  border rounded`}>
+<span class={`${customClass} card m-1 px-2 border rounded transition-opacity duration-300 ${index >= 4 ? 'extra-tag opacity-0' : ''}`}>
     <slot />
 </span>

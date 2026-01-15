@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 ---
 
-<div class={`card ${customClass} ${featured && 'featured'}`}>
+<div class={`card ${customClass} ${featured && 'featured'} break-inside-avoid group`}>
   <div class="p-4">
     <div class="flex items-center">
       {
@@ -28,9 +28,9 @@ const {
     </div>
     <p set:html={description.replaceAll('\n', "<br>")} class="pt-2"></p>
   </div>
-  <div class={`${customClass} border-t p-4 flex justify-between`}>
-    <div class="tags flex flex-wrap">
-      <!-- {tags?.map((tag, index) => <Tag index={index} customClass={customClass}>{tag}</Tag>)} -->
+  <div class={`${customClass} border-t p-4 flex justify-between card-footer`}>
+    <div class={`tags flex flex-wrap ${tags && tags.length > 4 ? 'overflow-hidden max-h-8 transition-all duration-300 ease-in-out group-hover:max-h-40' : ''}`}>
+      {tags?.map((tag, index) => <Tag index={index} customClass={customClass}>{tag}</Tag>)}
     </div>
     <div class="link">
       <a href={link} class="flex items-center">
@@ -39,3 +39,9 @@ const {
     </div>
   </div>
 </div>
+
+<style>
+  .group:hover :global(.extra-tag) {
+    opacity: 1;
+  }
+</style>
