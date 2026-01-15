@@ -3,5 +3,5 @@
 
 Simple Astro site inspired by [Zima] and [Evan]
 
-[Zima]:https://yeenimal.com
+[Zima]:https://zima.ong
 [Evan]:https://evan.graphics
