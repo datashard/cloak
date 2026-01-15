@@ -6,47 +6,47 @@ import Main from "@/layouts/Main.astro";
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 const sorted = [
-  ...projects
-    .filter(({ data: project }: { data: Project }) => project.featured)
-    .sort((a, b) => a.data.title.localeCompare(b.data.title)),
-  ...projects
-    .filter(({ data: project }: { data: Project }) => !project.featured)
-    .sort((a, b) => a.data.title.localeCompare(b.data.title)),
+    ...projects
+        .filter(({ data: project }: { data: Project }) => project.featured)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title)),
+    ...projects
+        .filter(({ data: project }: { data: Project }) => !project.featured)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title)),
 ].filter((a) => !a.data.previous);
 
 const previous = [
-  ...projects
-    .filter(({ data: project }: { data: Project }) => project.previous)
-    .sort((a, b) => a.data.title.localeCompare(b.data.title)),
+    ...projects
+        .filter(({ data: project }: { data: Project }) => project.previous)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title)),
 ];
 ---
 
-<Main title="projects | datashard">
-  <Section
-    header
-    big
-    title="projects"
-    desc="mix of professional and personal work"
-  >
-    <div class="grid grid-cols-1 gap-4 content-evenly">
-      {
-        sorted.map(({ data: project }: { data: Project }) => (
-          <ProjectCard project={project} />
-        ))
-      }
-    </div>
-  </Section>
-  <Section
-    big
-    title="previous work"
-    desc="general previous work, unmaintained projects, or projects i've left."
-  >
-    <div class="grid grid-cols-1 gap-4 content-evenly">
-      {
-        previous.map(({ data: project }: { data: Project }) => (
-          <ProjectCard project={project} />
-        ))
-      }
-    </div>
-  </Section>
+<Main title="projects | datashard" width="wide">
+    <Section
+        header
+        big
+        title="projects"
+        desc="mix of professional and personal work in random order"
+    >
+        <div class="columns-1 md:columns-2 gap-4 space-y-4">
+            {
+                sorted.map(({ data: project }: { data: Project }) => (
+                    <ProjectCard project={project} />
+                ))
+            }
+        </div>
+    </Section>
+    <Section
+        big
+        title="previous work"
+        desc="general previous work, unmaintained projects, or projects i've left."
+    >
+        <div class="columns-1 md:columns-2 gap-4 space-y-4">
+            {
+                previous.map(({ data: project }: { data: Project }) => (
+                    <ProjectCard project={project} />
+                ))
+            }
+        </div>
+    </Section>
 </Main>

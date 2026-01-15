@@ -1,23 +1,18 @@
 ---
-const {
-  title,
-  desc,
-  big,
-  header,
-}: {
-  title: string;
-  desc?: string;
-  big?: boolean;
-  header?: boolean;
-} = Astro.props;
+const { title, desc, big, header } = Astro.props as {
+    title: string;
+    desc?: string;
+    big?: boolean;
+    header?: boolean;
+};
 ---
 
 {!header && <hr />}
 <div class="pt-2" id={title.replaceAll(" ", "-")}>
-  <h2 class=`font-bold ${big && 'text-2xl'}`>{"->"} {title}</h2>
-  {desc ? <p class="pb-2">{desc}</p> : null}
+    <h2 class=`font-bold ${big && 'text-2xl'}`>{"->"} {title}</h2>
+    {desc ? <p class="pb-2">{desc}</p> : null}
 
-  <ol>
-    <slot />
-  </ol>
+    <ol>
+        <slot />
+    </ol>
 </div>

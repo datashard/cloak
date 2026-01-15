@@ -8,41 +8,45 @@ import { getCollection } from "astro:content";
 const currently = await getCollection("currently");
 ---
 
-<Main title="datashard">
-  <div id="intro">
-    <p>
-      {consts.descriptiopn}
-      <br />
-      they/them.
-    </p>
-    <br />
-    <Link text="about" href="/about" />
-    •
-    <Link text="projects" href="/projects" />
-  </div>
-  <Section title="currently">
-    {
-      currently.map((item) => (
-        <li>
-          {item.data.company && (
-            <>
-              {item.data.position} @ <Link text={item.data.company} href={item.data.link} />
-            </>
-          )}
-        </li>
-      ))
-    }
-  </Section>
-  <Section title="on the web">
-    <Link asLI text="bluesky" href="https://shard.wtf/bluesky" />
-    <Link asLI text="twitter" href="https://shard.wtf/twitter" />
-    <Link asLI text="fediverse" href="https://shard.wtf/masto" />
-    <Link asLI text="github" href="https://shard.wtf/github" />
-    <Link asLI text="dribbble" href="https://shard.wtf/dribbble" />
-  </Section>
-  <hr />
-  <div id="contact">
-    <h2 class="font-bold">{"->"} contact</h2>
-    <Link text="j [at] datakra.sh" href="mailto:j@datakra.sh" />
-  </div>
+<Main title="datashard" width="medium">
+    <div id="intro">
+        <p>
+            {consts.descriptiopn}
+            <br />
+            they/them.
+        </p>
+        <br />
+        <Link text="about" href="/about" />
+        • 
+        <Link text="projects" href="/projects" />
+    </div>
+    <Section title="currently">
+        {
+            currently.map((item) => (
+                <li>
+                    {item.data.company && (
+                        <>
+                            {item.data.position} @{" "}
+                            <Link
+                                text={item.data.company}
+                                href={item.data.link}
+                            />
+                        </>
+                    )}
+                </li>
+            ))
+        }
+    </Section>
+    <Section title="on the web">
+        <Link asLI text="bluesky" href="https://shard.wtf/bluesky" />
+        <Link asLI text="twitter" href="https://shard.wtf/twitter" />
+        <Link asLI text="fediverse" href="https://shard.wtf/masto" />
+        <Link asLI text="github" href="https://shard.wtf/github" />
+        <Link asLI text="dribbble" href="https://shard.wtf/dribbble" />
+    </Section>
+    <hr />
+    <div id="contact">
+        <h2 class="font-bold">{"->"} contact</h2>
+        <Link text="j [at] datakra.sh" href="mailto:j@datakra.sh" />
+    </div>
 </Main>
