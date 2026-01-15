@@ -1,0 +1,10 @@
+title: "@datashard/snapshot"
+description: Cypress JSON Tester
+link: https://github.com/datashard/snapshot
+# icon: "/projects/pyro.svg"
+# featured: true
+# previous: true
+tags:
+  - Cypress
+  - JSON
+  - QA

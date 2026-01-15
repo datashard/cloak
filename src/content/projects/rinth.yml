@@ -1,8 +1,10 @@
 title: Modrinth Servers
-description:  High-performance game server hosting for thousands of Modrinth users.
+description: High-performance game server hosting for thousands of Modrinth users.
 link: https://modrinth.gg
 previous: true
 # customClass: rinth
 # icon: "/projects/rinth.webp"
 tags:
   - Vue
+  - TypeScript
+  - Websockets

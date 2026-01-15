@@ -1,4 +1,9 @@
 title: sor.dog
-description:  |
+description: |
   Website Hosting, Maintenance, and Creation for Sor
 link: https://sor.dog
+tags:
+  - Express.JS
+  - Handlebars
+  - Node.JS
+  - SASS

@@ -1,4 +1,9 @@
 title: alx.rip
-description:  |
-  Website Hosting, Maintenance, and Creation for Alex Heldt   
+description: |
+  Website Hosting, Maintenance, and Creation for Alex Heldt
 link: https://alx.rip
+tags:
+  - Express.JS
+  - Handlebars
+  - Node.JS
+  - SASS

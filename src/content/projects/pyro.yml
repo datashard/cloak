@@ -6,7 +6,6 @@ icon: "/projects/pyro.svg"
 featured: true
 tags:
   - Astro
-  - Frontend
   - TypeScript
   - Next.JS
   - Tailwind

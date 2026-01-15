@@ -2,3 +2,7 @@ title: heika.dog
 description:  |
   Website Hosting, Maintenance, and Creation for heika
 link: https://heika.dog
+tags:
+  - TypeScript
+  - Next.JS
+  - SASS
